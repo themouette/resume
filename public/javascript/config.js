@@ -9,14 +9,20 @@ requirejs.config({
         // `app` module is located under `baseUrl`src
         'app': 'src',
         // `foundation stuff is located under `baseUrl`foundation
-        'foundation': 'foundation'
+        'foundation': 'foundation',
+        // templates are located into `baseUrl`src/templates
+        'templates': 'src/templates'
     },
     map: {
         '*': {
             // `vendor/jquery` can either refer to jquery or zepto
             'vendor/jquery': 'vendor/zepto',
             // To use lodash instead of underscore
-            'vendor/underscore': 'vendor/lodash.underscore'
+            'vendor/underscore': 'vendor/lodash.underscore',
+            // require plugins
+            'tpl': 'vendor/requirejs/tpl',
+            'i18n': 'vendor/requirejs/i18n',
+            'text': 'vendor/requirejs/text'
         }
     },
     shim: {
@@ -39,6 +45,9 @@ requirejs.config({
         },
         'vendor/underscore': {
             exports: '_'
+        },
+        'vendor/handlebars': {
+            exports: 'Handlebars'
         },
  
         'foundation/foundation.alerts': {
