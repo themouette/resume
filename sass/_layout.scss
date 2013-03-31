@@ -1,0 +1,17 @@
+$background: url(/images/45degreee_fabric.png);
+$foreground: #fff;
+$line-color: #666;
+
+body {
+    background: $background;
+}
+body> section.main { @include grid-row;
+    background: $foreground;
+    .content {@include grid-column(12);}
+}
+body> footer { @include grid-row;
+    border-top: 1px solid $line-color;
+    & > p {@include grid-column(12);}
+    margin-top: 1em;
+    padding-top: 1em;
+}

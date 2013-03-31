@@ -27,7 +27,7 @@ define([
             return {};
         },
         replaceMainContent: function ($el, empty) {
-            var $main = this.$('section#main');
+            var $main = this.$('section#main .content');
             if (false !== empty) {
                 $main.empty();
             }
