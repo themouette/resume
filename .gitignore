@@ -1,2 +1,4 @@
 .sass-cache
 node_modules
+public/javascript/build/
+public/css/
