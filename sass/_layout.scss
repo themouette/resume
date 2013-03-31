@@ -15,3 +15,16 @@ body> footer { @include grid-row;
     margin-top: 1em;
     padding-top: 1em;
 }
+
+.experiences {
+    ul.skills {
+        @include inline-list;
+        li {
+            @include label;
+            @include label-style($secondary-color, true);
+        }
+    }
+    .no-skills {
+        @include alert;
+    }
+}

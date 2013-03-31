@@ -1,21 +1,37 @@
 define([
     'vendor/underscore',
     'vendor/backbone',
-    'app/router'
-], function (_, Backbone, Router) {
+    'app/router',
+    'app/data',
+    './view/listView',
+    './view/show'
+], function (_, Backbone, Router, data, ListView, ShowView) {
+
+    var experiences = new Backbone.Collection(data.experiences);
+    var views = {};
+
     var Experiences = Router.extend({
+
         routes: {
             'experiences': "list",
             'experiences/:experience': "showOne"
         },
 
         list: function () {
-            Backbone.trigger('ui:canvas:content', '<p>List experiences</p>');
+            if (!views.list) {
+                views.list = new ListView({
+                    model: experiences
+                });
+            }
+            Backbone.trigger('ui:canvas:content', views.list.render().$el);
             this.selectMenu();
         },
 
         showOne: function (id) {
-            Backbone.trigger('ui:canvas:content', _.template('Navigate to experience <%- id %>', {id:id}));
+            var view = new ShowView({
+                model: experiences.get(id)
+            });
+            Backbone.trigger('ui:canvas:content', view.render().$el);
             this.selectMenu();
         },
 
