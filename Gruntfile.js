@@ -14,11 +14,19 @@ module.exports = function(grunt) {
         // In dev phase load module asynchronously.
         // only concat require and config file.
         dev: {
-            src: ['public/javascript/vendor/require.js', 'public/javascript/config.js'],
+            src: [
+                'public/javascript/vendor/custom.modernizr.js',
+                'public/javascript/vendor/require.js',
+                'public/javascript/config.js'
+            ],
             dest: 'public/javascript/build/<%= pkg.name %>.js'
         },
         release: {
-            src: ['public/javascript/vendor/almond.js', 'public/javascript/config.js'],
+            src: [
+                'public/javascript/vendor/custom.modernizr.js',
+                'public/javascript/vendor/almond.js',
+                'public/javascript/config.js'
+            ],
             dest: 'public/javascript/build/<%= pkg.name %>.js'
         }
     },
