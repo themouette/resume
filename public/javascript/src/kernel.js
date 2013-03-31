@@ -3,7 +3,8 @@ define([
     'vendor/underscore',
     'vendor/backbone',
     'app/view/canvas',
-    'app/experiences/router'
+    'app/experiences/router',
+    'app/helpers'
 ], function ($, _, Backbone, Canvas, Experiences) {
 
     // register module routes
