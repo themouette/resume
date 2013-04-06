@@ -4,11 +4,13 @@ define([
     'vendor/backbone',
     'app/view/canvas',
     'app/experiences/router',
+    'app/skills/router',
     'app/helpers'
-], function ($, _, Backbone, Canvas, Experiences) {
+], function ($, _, Backbone, Canvas, Experiences, Skills) {
 
     // register module routes
     new Experiences();
+    new Skills();
     var router = new Backbone.Router({
         routes: {
             '': function () {
