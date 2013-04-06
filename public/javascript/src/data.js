@@ -1,12 +1,12 @@
 define({
     experiences: [{
-        id: "carpe-hora",
-        title: "Head and co-founder",
-        company: "Carpe Hora",
-        from: "2005-11-01",
-        until: "2012-09-30",
-        mission: "Develop an online booking system.",
-        skills: ["php", "symfony1", "propel", "postgresql", "javascript", "jquery", "backbone", "git", "puppet"]
+        id: "almerys",
+        title: "Web developer",
+        company: "Almerys",
+        from: "2013-04-02",
+        until: null,
+        mission: "Develop a shared events and calendars system",
+        skills: ["javascript", "backbone"]
     }, {
         id: "universite-d-auvergne",
         title: "PHP teacher",
@@ -22,7 +22,15 @@ define({
         from: "2012-10-01",
         until: "2013-03-31",
         mission: "Develop a car retailer intranet",
-        skills: ["php", "symfony2", "doctrine", "phpunit", "mysql", "javascript", "backbone", "requirejs", "casperjs", "git"]
+        skills: ["php", "symfony2", "doctrine", "phpunit", "mysql", "elasticsearch", "javascript", "backbone", "requirejs", "casperjs", "git"]
+    }, {
+        id: "carpe-hora",
+        title: "Head and co-founder",
+        company: "Carpe Hora",
+        from: "2005-11-01",
+        until: "2012-09-30",
+        mission: "Develop an online booking system.",
+        skills: ["php", "symfony1", "propel", "postgresql", "javascript", "jquery", "backbone", "git", "puppet"]
     }, {
         id: "orange-r-d",
         title: "Gadget/Widget developer",
@@ -56,17 +64,60 @@ define({
         mission: "",
         skills: ["documentation", "Automatons", "VBA"]
     }],
-    skills: [
-        {id: "php", title: "PHP"},
-        {id: "symfony1", title: "symfony 1.0 to 1.4"},
-        {id: "symfony2", title: "Symfony2"},
-        {id: "phpunit", title: "PhpUnit"},
-        {id: "javascript", title: "JavaScript"},
-        {id: "backbone", title: "BACKBONE.JS"},
-        {id: "requirejs", title: "RequireJs"},
-        {id: "casperjs", title: "CasperJS"},
-        {id: "git", title: "GIT"}
-    ],
+    skills: [{
+        id: "php",
+        title: "PHP",
+        url: "http://php.net",
+        description: "I use php since 2005 with or without framework.",
+        related: ["symfony2", "phpunit", "propel", "symfony1", "doctrine", "casperjs"],
+        contributions: ["propel"]
+    }, {
+        id: "symfony1",
+        title: "symfony 1.0 to 1.4",
+        url: "http://symfony.com",
+        related: ["phpunit", "propel", "symfony2", "php"],
+        contributions: ["chCmsExposeRoutingPlugin", "chCmsApiPlugin", "symfony"]
+    },
+    {
+        id: "symfony2",
+        title: "Symfony2",
+        url: "http://symfony.com",
+        related: ["phpunit", "propel", "doctrine", "elasticsearch", "casperjs", "php"],
+        contributions: ["FOSElasticaBundle"]
+    }, {
+        id: "phpunit",
+        title: "PhpUnit",
+        url: "http://phpunit.de",
+        related: ["phpunit", "propel", "doctrine", "elasticsearch", "casperjs", "php"]
+    }, {
+        id: "javascript",
+        title: "JavaScript",
+        description: "In love with JavaScript since 2006.\nI first started with no framework, then Prototype came in, quickly replaced by jQuery, for wich I developped and customized some plugins.\nDuring 2008 I had my first template engine tries. Lately BACKBONEJS caught my attention.",
+        related: ["backbone", "jquery", "prototype", "handlebars", "requirejs", "casperjs"]
+    }, {
+        id: "backbone",
+        title: "BACKBONE.JS",
+        url: "http://backbonejs.org",
+        related: ["javascript", "underscore/lodash", "handlebars", "requirejs"]
+    }, {
+        id: "requirejs",
+        title: "REQUIREJS",
+        url: "http://requirejs.org",
+        related: ["javascript", "backbone", "handlebars"]
+    }, {
+        id: "casperjs",
+        title: "CasperJS",
+        url: "http://casperjs.org",
+        related: ["javascript", "functional testing", "symfony2", "backbone"]
+    }, {
+        id: "git",
+        title: "GIT",
+        url: "http://git-scm.org"
+    }, {
+        id: "vagrant",
+        title: "Vagrant",
+        url: "http://vagrantup.com"
+    }],
     educations: [{
         id: "esigelec",
         title: "Master degree in Engeniering",
