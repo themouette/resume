@@ -1,13 +1,24 @@
 <h2>Experiences</h2>
 {{#each experiences}}
-<p><a href="#!/experiences/{{id}}">{{title}}</a>@{{company}}</p>
-{{#if skills}}
-<ul class="skills">
-{{#each skills}}
-<li>{{skill this}}</li>
-{{/each}}
-</ul>
-{{else}}
-<p class="no-skills">No associated skills.</p>
-{{/if}}
+<div class="experience">
+    <h3><a href="#!/experiences/{{id}}">{{title}}</a>@{{company company}}</h3>
+    <span class="time">{{time_period from until}}</span>
+    <div class="logo">
+        {{#if logo}}
+        <img src="{{logo}}" />
+        {{else}}
+        <i class="icon-article" ></i>
+        {{/if}}
+    </div>
+    <p>{{mission}}</p>
+    {{#if skills}}
+    <ul class="skills">
+    {{#each skills}}
+    <li>{{skill this}}</li>
+    {{/each}}
+    </ul>
+    {{else}}
+    <p class="no-skills">No associated skills.</p>
+    {{/if}}
+</div>
 {{/each}}

@@ -1,3 +1,13 @@
 <h2>{{title}}</h2>
-<p>{{company}}</p>
+<ul>
+<li><i class="icon-office" ></i> {{company company}}</li>
+<li class="time"><i class="icon-calendar" ></i> {{time_period from until}}</li>
+<li><span>involved skills: </span>
+  <ul>
+    {{#each skills}}
+    <li>{{skill this}}</li>
+    {{/each}}
+  </ul>
+</li>
+<ul>
 <a href="#!/experiences">Back to list</a>
