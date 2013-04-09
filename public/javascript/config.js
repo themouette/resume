@@ -26,6 +26,9 @@ requirejs.config({
         }
     },
     shim: {
+        'vendor/moment': {
+            exports: 'moment'
+        },
         'vendor/jquery': {
             exports: '$'
         },
