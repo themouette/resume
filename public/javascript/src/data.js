@@ -6,6 +6,7 @@ define({
         from: "2013-04-02",
         until: null,
         mission: "Develop a shared events and calendars system",
+        description: "TODO",
         skills: ["javascript", "backbone"]
     }, {
         id: "universite-d-auvergne",
@@ -14,6 +15,7 @@ define({
         from: "2013-01-15",
         until: "2013-02-15",
         mission: "20 teaching hours to licence students",
+        description: "TODO",
         skills: ["php", "phpunit"]
     }, {
         id: "itnetwork",
@@ -22,6 +24,7 @@ define({
         from: "2012-10-01",
         until: "2013-03-31",
         mission: "Develop a car retailer intranet",
+        description: "TODO",
         skills: ["php", "symfony2", "doctrine", "phpunit", "mysql", "elasticsearch", "javascript", "backbone", "requirejs", "casperjs", "git"]
     }, {
         id: "carpe-hora",
@@ -30,6 +33,7 @@ define({
         from: "2005-11-01",
         until: "2012-09-30",
         mission: "Develop an online booking system.",
+        description: "TODO",
         skills: ["php", "symfony1", "propel", "postgresql", "javascript", "jquery", "backbone", "git", "puppet"]
     }, {
         id: "orange-r-d",
@@ -38,6 +42,7 @@ define({
         from: "2008-06-15",
         until: "2007-10-01",
         mission: "Develop portlets and factorize developments",
+        description: "TODO",
         skills: ["javascript", "Windows Sidebar", "Apple Dashboard", "iGoogle", "Netvibes", "eclipse", "ant"]
     }, {
         id: "efixo",
@@ -46,6 +51,7 @@ define({
         from: "2007-09-30",
         until: "2007-04-01",
         mission: "Set up a dynamic UI for ",
+        description: "TODO",
         skills: ["javascript", "Prototype", "Scriptaculous", "xslt", "C", "Linux (embedded system)"]
     }, {
         id: "asco-joucomatic",
@@ -54,6 +60,7 @@ define({
         from: "2004-06-01",
         until: "2004-08-31",
         mission: "Abroad internship",
+        description: "TODO",
         skills: []
     }, {
         id: "msd",
@@ -61,7 +68,8 @@ define({
         company: "MSD",
         from: "2002-11-15",
         until: "2005-11-15",
-        mission: "",
+        mission: "Integration in A&IT department",
+        description: "TODO",
         skills: ["documentation", "Automatons", "VBA"]
     }],
     skills: [{
