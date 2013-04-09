@@ -4,6 +4,16 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    copy: {
+        font: {
+            src: [
+                '**'
+            ],
+            dest: 'public/css/fonts/',
+            expand: true,
+            cwd: 'public/icomoo/fonts/'
+        }
+    },
     concat: {
         options: {
             separator: ';',
@@ -13,6 +23,19 @@ module.exports = function(grunt) {
         },
         // In dev phase load module asynchronously.
         // only concat require and config file.
+        css: {
+            src: [
+                'public/icomoo/style.css',
+                'public/css/app.css'
+            ],
+            dest: 'public/css/app.css'
+        },
+        ie7: {
+            src: [
+                'public/icomoo/lte-ie7.js'
+            ],
+            dest: 'public/javascript/build/lte-ie7.js'
+        },
         dev: {
             src: [
                 'public/javascript/vendor/custom.modernizr.js',
@@ -71,7 +94,7 @@ module.exports = function(grunt) {
         },
         'compass-dev': {
             files: ['sass/**/*.scss'],
-            tasks: ['compass:dev']
+            tasks: ['compass:dev', 'icomoo']
         }
     }
   });
@@ -82,9 +105,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
-  grunt.registerTask('dev', ['compass', 'concat:dev']);
-  grunt.registerTask('release', ['compass', 'require', 'concat:release', 'uglify']);
+  grunt.registerTask('icomoo', ['concat:ie7', 'concat:css', 'copy:font']);
+  grunt.registerTask('dev', ['compass', 'concat:dev', 'icomoo']);
+  grunt.registerTask('release', ['compass', 'require', 'concat:release', 'icomoo', 'uglify']);
 
 };
