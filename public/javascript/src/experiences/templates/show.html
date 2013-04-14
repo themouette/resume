@@ -1,4 +1,18 @@
 <h2>{{title}}</h2>
+<div class="logo">
+    {{#if logo}}
+    <img src="images/{{logo}}" />
+    {{else}}
+    <i class="icon-article" ></i>
+    {{/if}}
+</div>
+<div class="description">
+    {{#if description}}
+    {{markdown description}}
+    {{else}}
+    {{markdown mission}}
+    {{/if}}
+</div>
 <ul>
 <li><i class="icon-office" ></i> {{company company}}</li>
 <li class="time"><i class="icon-calendar" ></i> {{time_period from until}}</li>

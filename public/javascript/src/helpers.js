@@ -3,8 +3,9 @@ define([
     "vendor/underscore",
     "vendor/backbone",
     "vendor/moment",
+    "vendor/markdown",
     "app/data"
-], function (Handlebars, _, Backbone, moment, data) {
+], function (Handlebars, _, Backbone, moment, Markdown, data) {
     "use strict";
 
     var skills = new Backbone.Collection(data.skills);
@@ -42,5 +43,12 @@ define([
         return new Handlebars.SafeString(periodStillTpl({
             ago: moment(from).fromNow()
         }));
+    });
+
+    Handlebars.registerHelper('markdown', function (source) {
+        var md = new Markdown();
+        return new Handlebars.SafeString(
+            md.makeHtml(source || '')
+        );
     });
 });

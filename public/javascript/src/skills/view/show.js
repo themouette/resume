@@ -5,13 +5,17 @@ define([
 ], function (tpl, _, Backbone) {
 
     var Show = Backbone.View.extend({
+        initialize: function (options) {
+            this.related = options.related || [];
+        },
         render: function () {
             this.$el.html(tpl(this.getViewData()));
             return this;
         },
         getViewData: function () {
             return {
-                skill: this.model.toJSON()
+                skill: this.model.toJSON(),
+                related: this.related
             };
         }
     });

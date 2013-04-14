@@ -8,6 +8,7 @@ define([
 ], function (_, Backbone, Router, data, ListView, ShowView) {
 
     var skills = new Backbone.Collection(data.skills);
+    var experiences = new Backbone.Collection(data.experiences);
     var views = {};
 
     var Skills = Router.extend({
@@ -28,8 +29,10 @@ define([
         },
 
         showOne: function (id) {
+            var skill = skills.get(id);
             var view = new ShowView({
-                model: skills.get(id)
+                model: skill,
+                related: relatedExperiences(skill.get('id'), experiences)
             });
             Backbone.trigger('ui:canvas:content', view.render().$el);
             this.selectMenu();
@@ -39,6 +42,17 @@ define([
             Backbone.trigger('ui:canvas:navigate', '.skills');
         }
     });
+
+    function relatedExperiences (skill_id, experiences) {
+        var res = [];
+        experiences.each(function (experience) {
+            if (-1 !== _.indexOf(experience.get('skills'), skill_id)) {
+                res.push(experience.toJSON());
+            }
+        });
+
+        return res;
+    }
 
     return Skills;
 });
