@@ -11,7 +11,9 @@
       "url": "http://julien.muetton.me"
     }
   ],
-  "dependencies": {},
+  "dependencies": {
+    "pagedown": "~1.1.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.1.1",

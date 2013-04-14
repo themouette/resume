@@ -2,3 +2,4 @@
 node_modules
 public/javascript/build/
 public/css/
+public/javascript/vendor/pagedown

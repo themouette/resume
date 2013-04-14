@@ -5,6 +5,14 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     copy: {
+        pagedown: {
+            src: [
+                '**'
+            ],
+            dest: 'public/javascript/vendor/pagedown/',
+            expand: true,
+            cwd: 'node_modules/pagedown/'
+        },
         font: {
             src: [
                 '**'
@@ -109,7 +117,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('icomoo', ['concat:ie7', 'concat:css', 'copy:font']);
-  grunt.registerTask('dev', ['compass', 'concat:dev', 'icomoo']);
-  grunt.registerTask('release', ['compass', 'require', 'concat:release', 'icomoo', 'uglify']);
+  grunt.registerTask('dev', ['copy:pagedown', 'compass', 'concat:dev', 'icomoo']);
+  grunt.registerTask('release', ['copy:pagedown', 'compass', 'require', 'concat:release', 'icomoo', 'uglify']);
 
 };

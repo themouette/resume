@@ -19,6 +19,7 @@ requirejs.config({
             'vendor/jquery': 'vendor/zepto',
             // To use lodash instead of underscore
             'vendor/underscore': 'vendor/lodash.underscore',
+            'vendor/markdown': 'vendor/pagedown/Markdown.Converter',
             // require plugins
             'tpl': 'vendor/requirejs/tpl',
             'i18n': 'vendor/requirejs/i18n',
@@ -51,6 +52,9 @@ requirejs.config({
         },
         'vendor/handlebars': {
             exports: 'Handlebars'
+        },
+        'vendor/pagedown/Markdown.Converter': {
+            exports: 'Markdown.Converter'
         },
  
         'foundation/foundation.alerts': {
