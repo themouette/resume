@@ -1,27 +1,31 @@
-<h2>{{title}}</h2>
-<div class="logo">
-    {{#if logo}}
-    <img src="images/{{logo}}" />
-    {{else}}
-    <i class="icon-article" ></i>
-    {{/if}}
+<div class="sidebar">
+    <div class="logo">
+        {{#if logo}}
+        <img src="images/{{logo}}" />
+        {{else}}
+        <i class="icon-article" ></i>
+        {{/if}}
+    </div>
+    <ul>
+    <li><i class="icon-office" ></i> {{company company}}</li>
+    <li class="time"><i class="icon-calendar" ></i> {{time_period from until}}</li>
+    <li><span>involved skills: </span>
+    <ul>
+        {{#each skills}}
+        <li>{{skill this}}</li>
+        {{/each}}
+    </ul>
+    </li>
+    <ul>
 </div>
-<div class="description">
-    {{#if description}}
-    {{markdown description}}
-    {{else}}
-    {{markdown mission}}
-    {{/if}}
-</div>
-<ul>
-<li><i class="icon-office" ></i> {{company company}}</li>
-<li class="time"><i class="icon-calendar" ></i> {{time_period from until}}</li>
-<li><span>involved skills: </span>
-  <ul>
-    {{#each skills}}
-    <li>{{skill this}}</li>
-    {{/each}}
-  </ul>
-</li>
-<ul>
+<div class="experience-main">
+    <h2>{{title}}</h2>
+    <div class="description">
+        {{#if description}}
+        {{markdown description}}
+        {{else}}
+        {{markdown mission}}
+        {{/if}}
+    </div>
 <a href="#!/experiences">Back to list</a>
+</div>

@@ -1,10 +1,10 @@
 $background: url(/images/45degreee_fabric.png);
 $foreground: #fff;
-$line-color: #666;
+$line-color: #cacaca;
 
 body {
     background: $background;
-    padding-top: 2em;
+    padding: 2em 0;
 }
 body> header {
     .contain-to-grid {
@@ -13,26 +13,60 @@ body> header {
 }
 body> section.main { @include grid-row;
     background: $foreground;
+    padding-top: 2em;
     .content {
-        @include grid-column(12);
-        padding-top: 2em;
+        @include grid-column($columns:$total-columns,$collapse:false,$float:false);
+        box-sizing: border-box;
     }
+    padding-bottom: emCalc(24px);
 }
 body> footer { @include grid-row;
-    border-top: 1px solid $line-color;
-    & > p {@include grid-column(12);}
-    margin-top: emCalc(24px);
+    background: $foreground;
+    & > p {
+        @include grid-column(10,$center:true);
+        border-top: 1px solid $line-color;
+    }
     padding-top: emCalc(24px);
 }
 
+.disclaimer, .breadcrumbs {
+    @include grid-row($behavior:nested);
+}
+.disclaimer h3 {
+    @include grid-column(10,$center:true);
+    @include panel($primary-color);
+    @include inset-shadow($active:false);
+    @include radius;
+    text-align: center;
+}
+
+.presentation {
+    margin-top: 4em;
+    @include grid-column(10,$center:true);
+    margin-bottom: 6em;
+}
+
 .experiences {
+    .experience::before{
+        margin:1em auto;
+        width: 40%;
+        border-top: 1px solid $line-color;
+    }
     .experience {
+        @include grid-row($behavior:nested);
         margin: emCalc(16px) 0;
         position: relative;
     }
 
-    h3 { display: inline-block; }
+    header {
+        @include grid-column(9,$float:right, $offset:0);
+        box-sizing: border-box;
+    }
+    h3 {
+    }
     .time {
+        text-align:right;
+        display:block;
         font-style: italic;
         font-size: emCalc(12px);
     }
@@ -40,19 +74,33 @@ body> footer { @include grid-row;
         font-weight: bold;
     }
     .logo {
-        @include thumb;
-        height: 72px;
-        width: 72px;
-        float: left;
-        margin-right: 0.5em;
+        @include grid-column(2,$float:left);
+        box-sizing: border-box;
+        padding-top: 0.5em;
+        min-height: 150px;
+        &> div {
+            @include thumb;
+            width: 130px;
+            float: left;
+            margin-right: 0.5em;
+        }
     }
     .logo img {
-        max-height: 72px;
-        max-width: 72px;
+        max-height: 130px;
+        max-width: 130px;
         margin: auto;
+        display:block;
     }
     .logo i {
         font-size: 64px;
+    }
+    .mission {
+        @include grid-column(9);
+        box-sizing: border-box;
+    }
+    div.skills {
+        @include grid-column(9, $offset:2);
+        box-sizing: border-box;
     }
     ul.skills {
         font-size: emCalc(12px);
@@ -64,5 +112,32 @@ body> footer { @include grid-row;
     }
     .no-skills {
         @include alert;
+    }
+}
+
+
+.experience.show {
+    @include grid-row($behavior:nested);
+    &::before {
+        content: " ";
+        @include grid-column(1);
+        float: right;
+        height: 200px;
+    }
+
+    .experience-main {
+        @include grid-column(7, $offset:1, $float:right);
+        box-sizing: border-box;
+    }
+    .sidebar {
+        @include grid-column(2);
+        box-sizing: border-box;
+        float: right;
+    }
+    .logo {
+        margin-bottom: 1.5em;
+    }
+    .description {
+        text-align: justify;
     }
 }

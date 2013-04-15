@@ -5,7 +5,8 @@ define([
 ], function (tpl, _, Backbone) {
 
     var Show = Backbone.View.extend({
-        className: 'experiences show',
+        className: 'experience show',
+        tagName: 'article',
         render: function () {
             this.$el.html(tpl(this.getViewData()));
             return this;

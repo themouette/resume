@@ -1,6 +1,31 @@
-<h2>Experiences</h2>
+<div class="presentation">
+<p>
+As a pragmatic programer, I'm convinced that quality and constant improvement matters to be efficient.<br />
+You can find me on <a href="https://twitter.com/themouette">twitter</a> and
+<a href="https://github.com/themouette">github</a>.
+</p>
+<p>
+I tried to lauch an online appointment system for a while,
+I learned a lot about calendars and runing a business !<br />
+I enjoy talking technologies, testing strategies or software architectures.
+</p>
+<p>
+Lately I've been exchanging knowledge and shaking ideas in several cool places.
+</p>
+</div>
+
 {{#each experiences}}
-<div class="experience">
+<article class="experience">
+    <div class="logo">
+        <div>
+            {{#if logo}}
+            <img src="/images/{{logo}}" />
+            {{else}}
+            <i class="icon-article" ></i>
+            {{/if}}
+        </div>
+    </div>
+    <header>
     <h3>
         {{#if description}}
         <a href="#!/experiences/{{id}}">{{title}}</a>
@@ -10,22 +35,20 @@
         @{{company company}}
     </h3>
     <span class="time">{{time_period from until}}</span>
-    <div class="logo">
-        {{#if logo}}
-        <img src="/images/{{logo}}" />
-        {{else}}
-        <i class="icon-article" ></i>
-        {{/if}}
-    </div>
+    </header>
+    <div class="mission">
     {{markdown mission}}
+    </div>
+    <div class="skills">
     {{#if skills}}
-    <ul class="skills">
-    {{#each skills}}
-    <li>{{skill this}}</li>
-    {{/each}}
-    </ul>
+        <ul class="skills">
+        {{#each skills}}
+            <li>{{skill this}}</li>
+        {{/each}}
+        </ul>
     {{else}}
-    <p class="no-skills">No associated skills.</p>
+        <p class="no-skills">No associated skills.</p>
     {{/if}}
 </div>
+</article>
 {{/each}}

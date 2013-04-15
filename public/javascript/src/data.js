@@ -1,7 +1,7 @@
 define({
     experiences: [{
         id: "almerys",
-        title: "Web developer",
+        title: "freelance web developer",
         company: "Almerys",
         from: "2013-04-02",
         until: null,
@@ -9,16 +9,20 @@ define({
         mission: "Develop a shared events and calendars system",
         skills: ["javascript", "backbone"]
     }, {
-        id: "ajax-from-scratch",
-        title: "Speaker",
+        id: "clermontech",
+        title: "vice president",
         company: "clermontech.org",
         from: "2013-04-03",
-        until: "2013-04-03",
+        until: null,
         logo: "clermontech.png",
         mission: [
-            "Lightning talk `AJAX from scratch`.",
+            "[Clermontech](http://clermontech.org) aims at animating Clermont-Ferrand's developper network.",
             "",
-            "My slides are available [here](http://themouette.github.io/presentation-apihours-ajax-from-scratch/).",
+            "To achieve this goal, we organize conferences called \"API Hours\" and developper lunches.",
+            "",
+            "For the \"API Hours\" first edition I gave a lightning talk: [AJAX from scratch](http://clermontech.org/api-hours/2013/03/25/API-Hour-1.html).",
+            "",
+            "Slides are available [on github](http://themouette.github.io/presentation-apihours-ajax-from-scratch/).",
             ""].join("\n"),
         skills: ["javascript", "ajax"]
     }, {
@@ -41,7 +45,7 @@ define({
         skills: ["php", "phpunit", "linux"]
     }, {
         id: "itnetwork",
-        title: "Web developer",
+        title: "web developer",
         company: "Inter Trade Network",
         from: "2012-10-01",
         until: "2013-03-31",
@@ -51,7 +55,7 @@ define({
         skills: ["php", "symfony2", "doctrine", "phpunit", "mysql", "elasticsearch", "javascript", "backbone", "requirejs", "casperjs", "git", "linux"]
     }, {
         id: "carpe-hora",
-        title: "Head and co-founder",
+        title: "head and co-founder",
         company: "Carpe Hora",
         from: "2005-11-01",
         until: "2012-09-30",
@@ -63,7 +67,7 @@ define({
         skills: ["php", "symfony1", "propel", "postgresql", "javascript", "jquery", "backbone", "git", "puppet", "linux"]
     }, {
         id: "orange-r-d",
-        title: "Gadget/Widget developer",
+        title: "widget developer",
         company: "Orange R&D",
         from: "2008-06-15",
         until: "2007-10-01",
@@ -83,7 +87,7 @@ define({
         skills: ["javascript", "Windows Sidebar", "Apple Dashboard", "iGoogle", "Netvibes", "eclipse", "ant"]
     }, {
         id: "efixo",
-        title: "Lead developer",
+        title: "lead developer",
         company: "Efixo",
         from: "2007-09-30",
         until: "2007-04-01",
@@ -115,7 +119,7 @@ define({
         skills: ["javascript", "Prototype", "Scriptaculous", "xslt", "C", "linux", "Linux (embedded system)"]
     }, {
         id: "asco-joucomatic",
-        title: "Internship",
+        title: "internship",
         company: "Asco Joucomatic",
         from: "2004-06-01",
         until: "2004-08-31",
