@@ -1,1 +1,22 @@
-<p>List all skills</p>
+{{#skillGroups}}
+<div class="group">
+    <header>
+        <h3>{{name}}</h3>
+    </header>
+    {{#categories}}
+    <div class="category">
+        <p class="name">{{name}}</p>
+        <div class="skills">
+            <ul>
+                {{#skills}}
+                <li>{{skill this}}</li>
+                {{/skills}}
+            </ul>
+        </div>
+    </div>
+    {{/categories}}
+</div>
+{{/skillGroups}}
+{{^skillGroups}}
+No skills
+{{/skillGroups}}

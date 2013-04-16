@@ -5,13 +5,14 @@ define([
 ], function (tpl, _, Backbone) {
 
     var List = Backbone.View.extend({
+        className: "skills-list",
         render: function () {
             this.$el.html(tpl(this.getViewData()));
             return this;
         },
         getViewData: function () {
             return {
-                skills: this.model.toJSON()
+                skillGroups: this.model.toJSON()
             };
         }
     });
