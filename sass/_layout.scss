@@ -54,6 +54,9 @@ body> footer { @include grid-row;
         width: 40%;
         border-top: 1px solid $line-color;
     }
+    .experience:nth-child(1)::before{
+        display: none;
+    }
     .experience {
         @include grid-row($behavior:nested);
         margin: emCalc(16px) 0;

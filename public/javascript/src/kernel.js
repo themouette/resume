@@ -5,19 +5,15 @@ define([
     'app/view/canvas',
     'app/experiences/router',
     'app/skills/router',
+    'app/home/router',
     'app/helpers'
-], function ($, _, Backbone, Canvas, Experiences, Skills) {
+], function ($, _, Backbone, Canvas, Experiences, Skills, Home) {
 
     // register module routes
     new Experiences();
     new Skills();
-    var router = new Backbone.Router({
-        routes: {
-            '': function () {
-                this.navigate('!/experiences', {replace: false, trigger: true});
-            }
-        }
-    });
+    new Home();
+    var router = new Backbone.Router({ });
     Backbone.on('app:navigate', _.bind(router.navigate, router));
 
     // initialize canvas
