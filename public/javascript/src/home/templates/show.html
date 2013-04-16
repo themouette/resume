@@ -14,3 +14,40 @@ Lately I've been exchanging knowledge and shaking ideas in several cool places.
 </p>
 </div>
 
+<div class="contact">
+    <h3>Contact</h3>
+    <ul>
+        <li>Clermont Ferrand</li>
+        <li><a href="https://twitter.com/themouette" class="twitter">@themouette</a></li>
+        <li><a href="https://github.com/themouette" class="github">themouette</a></li>
+        <li><a href="mailto:julien@muetton.me" class="mail">julien@muetton.me</a></li>
+    </ul>
+</div>
+
+<div class="last-experiences">
+    <h3>Last experiences</h3>
+    <ul>
+    {{#experiences}}
+        <li>
+            {{#if description}}
+            <a href="#!/experiences/{{id}}">{{title}}</a>
+            {{else}}
+            <a href="#!/experiences">{{title}}</a>
+            {{/if}}
+            @{{company company}}
+        </li>
+    {{/experiences}}
+
+    </ul>
+</div>
+
+<div class="top-skills">
+    <h3>Top skills</h3>
+    <ul>
+        <li>{{skill "javascript"}}</li>
+        <li>{{skill "backbone"}}</li>
+        <li>{{skill "php"}}</li>
+        <li>{{skill "symfony2"}}</li>
+        <li>{{skill "vagrant"}}</li>
+    </ul>
+</div>

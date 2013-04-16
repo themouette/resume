@@ -5,12 +5,15 @@ define([
 ], function (tpl, _, Backbone) {
 
     var Show = Backbone.View.extend({
+        className: "home",
         render: function () {
             this.$el.html(tpl(this.getViewData()));
             return this;
         },
         getViewData: function () {
-            return this.model.toJSON();
+            return {
+                experiences: _.head(this.model.get('experiences').toJSON(), 5)
+            };
         }
     });
 

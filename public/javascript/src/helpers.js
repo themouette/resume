@@ -11,8 +11,8 @@ define([
     var skills = new Backbone.Collection(data.skills);
     var linkTpl = _.template('<a href="#!/skills/<%- id %>"><%- title %></a>');
     Handlebars.registerHelper('skill', function (skill) {
-        if (skills.get(skill)) {
-            var s = skills.get(skill);
+        var s = skills.get(skill) || _.first(skills.where({id:skill}));
+        if (s) {
             return new Handlebars.SafeString(
                 linkTpl({id: s.get('id'), title: s.get('title')})
             );

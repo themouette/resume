@@ -6,6 +6,7 @@ define([
     './view/show'
 ], function (_, Backbone, Router, data, ShowView) {
 
+    var experiences = new Backbone.Collection(data.experiences);
     var views = {};
 
     var Home = Backbone.Router.extend({
@@ -14,10 +15,11 @@ define([
         },
 
         "home": function () {
-        console.log('home');
             if (!views.show) {
                 views.show = new ShowView({
-                    model: new Backbone.Model()
+                    model: new Backbone.Model({
+                        experiences: experiences
+                    })
                 });
             }
             Backbone.trigger('ui:canvas:content', views.show.render().$el);
