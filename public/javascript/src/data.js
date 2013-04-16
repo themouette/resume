@@ -42,7 +42,7 @@ define({
             "",
             "Have a look to the [slides](http://williamdurand.fr/licpro-php-slides/#slide1).",
             ""].join("\n"),
-        skills: ["php", "phpunit", "linux"]
+        skills: ["php", "phpunit", "linux", "vagrant"]
     }, {
         id: "itnetwork",
         title: "web developer",
@@ -175,7 +175,6 @@ define({
         skills: ["documentation", "Automatons", "VBA"]
     }],
 
-
     skills: [{
         id: "php",
         title: "PHP",
@@ -188,19 +187,22 @@ define({
         title: "symfony 1.0 to 1.4",
         url: "http://symfony.com",
         related: ["phpunit", "propel", "symfony2", "php"],
-        contributions: ["chCmsExposeRoutingPlugin", "chCmsApiPlugin", "symfony"]
+        contributions: ["chcmsexposeroutingplugin", "chcmsapiplugin", "symfony"]
     },
     {
         id: "symfony2",
         title: "Symfony2",
         url: "http://symfony.com",
         related: ["phpunit", "propel", "doctrine", "elasticsearch", "casperjs", "php"],
-        contributions: ["FOSElasticaBundle"]
+        contributions: ["foselasticabundle"]
     }, {
         id: "phpunit",
         title: "PhpUnit",
         url: "http://phpunit.de",
-        related: ["phpunit", "propel", "doctrine", "elasticsearch", "casperjs", "php"]
+        related: ["phpunit", "propel", "doctrine", "elasticsearch", "casperjs", "php"],
+        slides: [
+            { title: "[FR] introduction to unit tests", url: "http://cup-of-giraf.github.io/presentation-unittests/#slide1" }
+        ]
     }, {
         id: "javascript",
         title: "JavaScript",
@@ -214,8 +216,9 @@ define({
             "Lately [BACKBONE.JS](#!/skills/backbone) caught my attention.",
             "",
             ""].join("\n"),
-        related: ["backbone", "jquery", "prototype", "handlebars", "requirejs", "casperjs"],
+        related: ["backbone", "jquery", "prototype", "handlebars", "requirejs", "casperjs", "gruntjs"],
         slides: [
+            {title: "[FR] CasperJS: functional testing", url: "http://cup-of-giraf.github.io/presentation-casperjs/" },
             {title: "Ajax from scratch", url: "http://themouette.github.io/presentation-apihours-ajax-from-scratch/"},
             {title: "js 101", url: "http://themouette.github.io/presentation-js101/#slide1"}
         ]
@@ -223,20 +226,59 @@ define({
         id: "backbone",
         title: "BACKBONE.JS",
         url: "http://backbonejs.org",
-        related: ["javascript", "underscore/lodash", "handlebars", "requirejs"]
+        description: [
+            "Backbone.JS is the perfect fit to build dynamic web application.",
+            "Modular enough to be used in continuous improvement, whereas [ChaplinJS](http://chaplinjs.org/)",
+            "or [Marionette](http://marionettejs.com/) help in scaling teams and applications.",
+            "",
+            "This resume uses Backbone.JS and [Handlebars](http://handlebarsjs.com/) to compute the views.",
+            "",
+            ""].join("\n"),
+        related: ["javascript", "underscore/lodash", "handlebars", "requirejs", "gruntjs"],
+        contributions: [
+            {title: "this resume", url: "https://github.com/themouette/resume"}
+        ]
     }, {
         id: "requirejs",
         title: "REQUIREJS",
         url: "http://requirejs.org",
-        related: ["javascript", "backbone", "handlebars"]
+        description: [
+            "<accronym title=\"Asynchronous Module Definition\">AMD</accronym> is great",
+            "for development as no compilation is needed. For production, REQUIREJS provides a great",
+            "compressor leveraging dependancies information.",
+            "",
+            "Many plugins are available, and coupled with [gruntjs](http://gruntjs.com/) you really",
+            "can do amazing things.",
+            "",
+            ""].join("\n"),
+        related: ["javascript", "backbone", "handlebars", "gruntjs"]
     }, {
         id: "casperjs",
         title: "CasperJS",
+        description: [
+            "Build on top of [PhantomJS](http://phantomjs.org/), CasperJS provide a promise",
+            "API and several utilities.",
+            "",
+            "I use it for tests and screenshots on every project.",
+            "",
+            ""].join("\n"),
         url: "http://casperjs.org",
-        related: ["javascript", "functional testing", "symfony2", "backbone"]
+        related: ["javascript", "functional testing", "symfony2", "backbone"],
+        slides: [
+            {title: "[FR] CasperJS: functional testing", url: "http://cup-of-giraf.github.io/presentation-casperjs/" }
+        ]
     }, {
         id: "git",
         title: "GIT",
+        description: [
+            "GIT is a wonderful tool to leverage collaboration.",
+            "Whatever your production workflow is, it fits. Even when SVN is around,",
+            "you can use [git-svn](https://www.kernel.org/pub/software/scm/git/docs/git-svn.html)",
+            "",
+            "Coupled with [GitLab](http://gitlab.org/) or [Github](https://github.com) you can do",
+            "peer reviews, merge requests and encourage the discussion.",
+            "",
+            ""].join("\n"),
         url: "http://git-scm.org"
     }, {
         id: "linux",
@@ -247,11 +289,92 @@ define({
             "",
             "",
             ""].join("\n"),
+        related: ["bash", "debian", "vagrant"],
         url: ""
     }, {
         id: "vagrant",
         title: "Vagrant",
-        url: "http://vagrantup.com"
+        url: "http://vagrantup.com",
+        description: [
+            "When working on several projects at the same time, it's really easy to have non uniform",
+            "configuration accross a team, and it's the last thing you want.",
+            "",
+            "Vagrant is part of my developement process because it helps keeping things clean.",
+            "Every project has it's own virtual machine that is a replica of production environment software.",
+            "When environment is messed up, it is easy to create a new virtual machine, this process",
+            "ensure provisioning and bootstrap scripts are always up to date.",
+            "",
+            ""].join("\n"),
+        related: ["puppet", "bash", "linux"],
+        contributions: [
+            {title: "My configuration", url: "https://github.com/themouette/puppet-me"}
+        ]
+    }],
+    skillGroups: [{
+        name: "Development",
+        categories: [ {
+            name: "Frontend",
+            skills: ["javascript", "jquery", "backbone", "requirejs", "HTML",
+                "Twitter Bootstrap", "zurb-foundation", "lesscss", "sass", "CSS"]
+        }, {
+            name: "Server",
+            skills: ["php", "symfony2", "symfony1", "propel", "wordpress", "python", "bottle", "nodejs"]
+        }, {
+            name: "Tests",
+            skills: ["phpunit", "lime", "casperjs"]
+        }, {
+            name: "Database",
+            skills: ["MySQL", "PostgreSQL", "MongoDB"]
+        }, {
+            name: "Other",
+            skills: ["elasticsearch", "RabbitMQ", "Solr", "scripting"]
+        }, {
+            name: "Standards",
+            skills: ["HTTP", "iCalendar", "WebDav", "WebCal", "oAuth", "OpenId", "REST"]
+        } ]
+    }, {
+        name: "Administration",
+        categories: [
+        {
+            name: "OS",
+            skills: ["debian", "linux", "Windows"]
+        }, {
+            name: "WebServer",
+            skills: ["Apache", "Nginx"]
+        }, {
+            name: "Deploy",
+            skills: ["Fabric", "git", "rsync"]
+        }, {
+            name: "High Availability",
+            skills: ["Corosync - Heartbeat"]
+        } ]
+    }, {
+        name: "Tools",
+        categories: [ {
+            name: "Version control",
+            skills:  ["git"]
+        }, {
+            name: "editor / IDE",
+            skills:     ["vim", "notepad++", "eclipse"]
+        }, {
+            name: "collaborative",
+            skills:    ["Gitlab", "Github", "redmine", "trac", "DokuWiki"]
+        }, {
+            name: "office",
+            skills:           ["writer", "word", "excel", "calc", "access (VBA)"]
+        }, {
+            name: "other",
+            skills:            ["vagrant", "puppet", "grunt", "Jenkins", "ANT"]
+        } ]
+    }, {
+        name: "Non technicals",
+        categories: [ {
+            name: "Other",
+            skills: ["Sharing", "Specifications"]
+        }, {
+            name: "Project",
+            skills: ["Agility sensitivity"]
+        } ]
     }],
     educations: [{
         id: "esigelec",
