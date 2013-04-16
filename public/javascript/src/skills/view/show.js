@@ -5,6 +5,7 @@ define([
 ], function (tpl, _, Backbone) {
 
     var Show = Backbone.View.extend({
+        className: 'skill',
         initialize: function (options) {
             this.related = options.related || [];
         },

@@ -1,43 +1,60 @@
-<h2>{{skill.title}}</h2>
-<p>{{markdown skill.description}}</p>
-{{#if skill.url}}
-<a href="{{skill.url}}">Official website</a>
-{{else}}
-{{/if}}
-<h3>Related experiences</h3>
-<ul>
-{{#related}}
-    <li>
-        {{#if description}}
-        <a href="#!/experiences/{{id}}">{{title}}</a>
-        {{else}}
-        {{title}}
-        {{/if}}
-        @{{company company}}
-    </li>
-{{/related}}
-</ul>
-{{#if skill.related}}
-<h3>Related skills</h3>
-<ul>
-    {{#each skill.related}}
-    <li>{{skill this}}</li>
-    {{/each}}
-</ul>
-{{/if}}
-{{#if skill.slides}}
-<h3>Related presentations</h3>
-<ul>
-    {{#each skill.slides}}
-    <li><a href="{{this.url}}">{{this.title}}</a></li>
-    {{/each}}
-</ul>
-{{/if}}
-{{#if skill.contributions}}
-<h3>Opensource contributions</h3>
-<ul>
-    {{#each skill.contributions}}
-    <li>{{this}}</li>
-    {{/each}}
-</ul>
-{{/if}}
+<div class="presentation">
+    <h2>{{skill.title}}</h2>
+    {{#if skill.url}}
+    <p class="backlink">
+        <a href="{{skill.url}}">Official website</a>
+    </p>
+    {{/if}}
+    {{markdown skill.description}}
+</div>
+<div class="related-experiences">
+    <h3>Related experiences</h3>
+    <ul>
+    {{#related}}
+        <li>
+            {{#if description}}
+            <a href="#!/experiences/{{id}}">{{title}}</a>
+            {{else}}
+            <a href="#!/experiences">{{title}}</a>
+            {{/if}}
+            @{{company company}}
+        </li>
+    {{/related}}
+    </ul>
+</div>
+<div class="related-skills">
+    <h3>Related skills</h3>
+    {{#if skill.related}}
+    <ul>
+        {{#each skill.related}}
+        <li>{{skill this}}</li>
+        {{/each}}
+    </ul>
+    {{else}}
+    None
+    {{/if}}
+</div>
+<div class="related-presentations">
+    <h3>Related presentations</h3>
+    {{#if skill.slides}}
+    <ul>
+        {{#each skill.slides}}
+        <li><a href="{{this.url}}">{{this.title}}</a></li>
+        {{/each}}
+    </ul>
+    {{else}}
+    None
+    {{/if}}
+</div>
+<div class="related-contributions">
+    <h3>Opensource</h3>
+    {{#if skill.contributions}}
+    <ul>
+        {{#each skill.contributions}}
+        <li>{{contribution this}}</li>
+        {{/each}}
+    </ul>
+    {{else}}
+    None
+    {{/if}}
+</div>
