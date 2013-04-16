@@ -29,6 +29,22 @@ define([
         );
     });
 
+    var contributionTpl = _.template('<span class="contribution"><%- title %></span>');
+    var contributionLinkTpl = _.template('<a href="<%- url %>" class="contribution"><%- title %></a>');
+    Handlebars.registerHelper('contribution', function (contribution) {
+        if (typeof contribution === "string") {
+            contribution = {title: contribution};
+        }
+        if (contribution.url) {
+            return new Handlebars.SafeString(
+                contributionLinkTpl(contribution)
+            );
+        }
+        return new Handlebars.SafeString(
+            contributionTpl(contribution)
+        );
+    });
+
     var periodTpl = _.template('<%- duration %>, from <%- from %> to <%- to %>');
     var periodStillTpl = _.template('started <%- ago %>');
     Handlebars.registerHelper('time_period', function (from, to) {
