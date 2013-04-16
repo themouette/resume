@@ -9,6 +9,7 @@ define([
 
     var skills = new Backbone.Collection(data.skills);
     var experiences = new Backbone.Collection(data.experiences);
+    var skillGroups = new Backbone.Collection(data.skillGroups);
     var views = {};
 
     var Skills = Router.extend({
@@ -21,7 +22,7 @@ define([
         list: function () {
             if (!views.list) {
                 views.list = new ListView({
-                    model: skills
+                    model: skillGroups
                 });
             }
             Backbone.trigger('ui:canvas:content', views.list.render().$el);
