@@ -1,3 +1,5 @@
+@import "compass/typography/lists/bullets";
+
 $background: url(/images/45degreee_fabric.png);
 $foreground: #fff;
 $line-color: #cacaca;
@@ -139,5 +141,57 @@ body> footer { @include grid-row;
     }
     .description {
         text-align: justify;
+    }
+}
+
+.skill {
+    @include grid-row($behavior:nested);
+
+    .related-experiences,
+    .related-skills,
+    .related-presentations,
+    .related-contributions {
+        @include grid-column(4,$offset:1);
+        box-sizing: border-box;
+
+        li {
+            @include no-bullets;
+        }
+    }
+}
+
+.skills-list {
+    @include grid-row($behavior:nested);
+    header {
+        @include grid-column(10, $offset:1);
+        box-sizing: border-box;
+        margin-top: 2em;
+    }
+    .category::before{
+        content: " ";
+        margin: 0.5em auto;
+        width: 80%;
+        border-top: 1px dashed $line-color;
+    }
+    .category:nth-child(2)::before{
+        display: none;
+    }
+    .category {
+        @include grid-row($behavior:nested);
+        border-bottom:1px solid transparent;
+    }
+    p.name {
+        @include grid-column(2, $offset:1);
+        box-sizing: border-box;
+        font-weight: bold;
+        margin-bottom:0;
+    }
+    .skills {
+        @include grid-column(8, $last-column:true);
+        box-sizing: border-box;
+    }
+    .skills ul {
+        @include inline-list;
+        margin-bottom: 0;
     }
 }
