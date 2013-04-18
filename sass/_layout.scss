@@ -1,6 +1,6 @@
 @import "compass/typography/lists/bullets";
 
-$background: url(/images/45degreee_fabric.png);
+$background: url(../images/45degreee_fabric.png);
 $foreground: #fff;
 $line-color: #cacaca;
 
@@ -27,6 +27,9 @@ body> footer { @include grid-row;
     & > p {
         @include grid-column(10,$center:true);
         border-top: 1px solid $line-color;
+        padding-top: 1em;
+        text-align: center;
+        font-style: italic;
     }
     padding-top: emCalc(24px);
 }
