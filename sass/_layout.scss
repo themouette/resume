@@ -203,12 +203,14 @@ body> footer { @include grid-row;
 }
 
 .home {
+    @include grid-row($behavior:nested);
     .contact {
-        @include grid-column(3, $offset: 1);
+        @include grid-column(3, $offset:0);
         box-sizing: border-box;
+        text-align: center;
     }
     .last-experiences {
-        @include grid-column(4);
+        @include grid-column(6);
         box-sizing: border-box;
         text-align: center;
     }
@@ -216,6 +218,7 @@ body> footer { @include grid-row;
         @include grid-column(3, $last-column:true);
         box-sizing: border-box;
         text-align: right;
+        text-align: center;
     }
     .contact li,
     .last-experiences li,
