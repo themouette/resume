@@ -48,7 +48,8 @@ module.exports = function(grunt) {
             src: [
                 'public/javascript/vendor/custom.modernizr.js',
                 'public/javascript/vendor/require.js',
-                'public/javascript/config.js'
+                'src/config.js',
+                'src/kernel.js'
             ],
             dest: 'public/javascript/build/<%= pkg.name %>.js'
         },
@@ -56,7 +57,7 @@ module.exports = function(grunt) {
             src: [
                 'public/javascript/vendor/custom.modernizr.js',
                 'public/javascript/vendor/almond.js',
-                'public/javascript/config.js'
+                'public/javascript/build/<%= pkg.name %>.js'
             ],
             dest: 'public/javascript/build/<%= pkg.name %>.js'
         }
@@ -64,9 +65,14 @@ module.exports = function(grunt) {
     requirejs: {
         main: {
             options: {
-                baseUrl: "/",
-                mainConfigFile: "public/javascript/src/config.js",
-                out: "build/<%= pkg.name %>.js"
+                optimize: "none",
+                baseUrl: "./public/javascript/",
+                out: "public/javascript/build/<%= pkg.name %>.js",
+                mainConfigFile: "src/config.js",
+                name: "app/kernel",
+                paths: {
+                    "app": "../../src"
+                }
             }
         }
     },
@@ -90,8 +96,8 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'public/build/<%= pkg.name %>.js',
-        dest: 'public/build/<%= pkg.name %>.js'
+        src: 'public/javascript/build/<%= pkg.name %>.js',
+        dest: 'public/javascript/build/<%= pkg.name %>.js'
       }
     },
 
@@ -118,6 +124,12 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('icomoo', ['concat:ie7', 'concat:css', 'copy:font']);
   grunt.registerTask('dev', ['copy:pagedown', 'compass', 'concat:dev', 'icomoo']);
-  grunt.registerTask('release', ['copy:pagedown', 'compass', 'require', 'concat:release', 'icomoo', 'uglify']);
+  grunt.registerTask('release', [
+    // copy and compile assets
+    'copy:pagedown', 'compass', 'icomoo',
+    'requirejs',            // build from config file
+    'concat:release',       // combine static libs with build
+    'uglify'
+  ]);
 
 };

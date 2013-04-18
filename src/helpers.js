@@ -5,7 +5,7 @@ define([
     "vendor/moment",
     "vendor/markdown",
     "app/data"
-], function (Handlebars, _, Backbone, moment, Markdown, data) {
+], function (Handlebars, _, Backbone, moment, Mkd, data) {
     "use strict";
 
     var skills = new Backbone.Collection(data.skills);
@@ -62,7 +62,7 @@ define([
     });
 
     Handlebars.registerHelper('markdown', function (source) {
-        var md = new Markdown();
+        var md = new Mkd();
         return new Handlebars.SafeString(
             md.makeHtml(source || '')
         );
