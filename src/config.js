@@ -13,7 +13,7 @@ requirejs.config({
         // templates are located into `baseUrl`src/templates
         'templates': 'src/templates',
         // `vendor/jquery` can either refer to jquery or zepto
-        'vendor/jquery': 'vendor/zepto',
+//        'vendor/jquery': 'vendor/zepto',
         // To use lodash instead of underscore
         'vendor/underscore': 'vendor/lodash.underscore',
         'vendor/markdown': 'vendor/pagedown/Markdown.Converter',
