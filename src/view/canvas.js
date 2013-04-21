@@ -1,11 +1,12 @@
 define([
     'tpl!templates/canvas.html',
+    'vendor/jquery',
     'vendor/underscore',
     'vendor/backbone',
     'app/view/header',
     'app/view/breadcrumbs',
     'app/view/footer'
-], function (tpl, _, Backbone, Header, Breadcrumbs, Footer) {
+], function (tpl, $, _, Backbone, Header, Breadcrumbs, Footer) {
 
     var Canvas = Backbone.View.extend({
         initialize: function () {
@@ -23,9 +24,9 @@ define([
         },
         render: function () {
             this.$el.html(tpl(this.getViewData()));
-            this.views.header.setElement(this.$('body > header')).render();
-            this.views.breadcrumbs.setElement(this.$('body > div#breadcrumbs')).render();
-            this.views.footer.setElement(this.$('body > footer')).render();
+            this.views.header.setElement(this.$('header')).render();
+            this.views.footer.setElement(this.$('footer')).render();
+            this.views.breadcrumbs.setElement(this.$('div#breadcrumbs')).render();
             return this;
         },
         getViewData: function () {
@@ -37,6 +38,14 @@ define([
                 $main.empty();
             }
             $main.append($el);
+            this.ensureScroll();
+        },
+
+        ensureScroll: function () {
+            var top = this.$('header').position().top;
+            if (top < this.$el.scrollTop()) {
+                this.$el.scrollTop(top);
+            }
         },
 
         // link event delegation for subviews
