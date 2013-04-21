@@ -23,6 +23,7 @@ define([
                 });
             }
             Backbone.trigger('ui:canvas:content', views.show.render().$el);
+            Backbone.trigger('ui:canvas:navigate', 'h1');
         }
     });
 
