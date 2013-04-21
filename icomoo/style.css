@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-calendar, .icon-star, .icon-star-2, .icon-star-3, .icon-office, .icon-article {
+.icon-calendar, .icon-star, .icon-star-2, .icon-star-3, .icon-office, .icon-article, .icon-github, .icon-twitter {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -54,4 +54,10 @@ you can use the generic selector below, but it's slower:
 }
 .icon-article:before {
 	content: "\e005";
+}
+.icon-github:before {
+	content: "\e006";
+}
+.icon-twitter:before {
+	content: "\e007";
 }

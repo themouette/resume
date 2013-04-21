@@ -11,7 +11,9 @@ window.onload = function() {
 			'icon-star-2' : '&#xe002;',
 			'icon-star-3' : '&#xe003;',
 			'icon-office' : '&#xe004;',
-			'icon-article' : '&#xe005;'
+			'icon-article' : '&#xe005;',
+			'icon-github' : '&#xe006;',
+			'icon-twitter' : '&#xe007;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
