@@ -187,6 +187,12 @@ define({
         title: "symfony 1.0 to 1.4",
         url: "http://symfony.com",
         related: ["phpunit", "propel", "symfony2", "php"],
+        description: [
+            "I love RAD frameworks, with code generation and simple concepts.",
+            "",
+            "I learned a lot reading symfony's codebase.",
+            "",
+            ""].join("\n"),
         contributions: ["chcmsexposeroutingplugin", "chcmsapiplugin", "symfony"]
     },
     {
@@ -194,11 +200,31 @@ define({
         title: "Symfony2",
         url: "http://symfony.com",
         related: ["phpunit", "propel", "doctrine", "elasticsearch", "casperjs", "php"],
+        description: [
+            "Symfony2 has great ecosystem and concepts allowing orthogonality in development.",
+            "It also helps in team and codebase scaling.",
+            "It never had been this easy to build big apps in PHP.",
+            "",
+            "As I'd rather build small apps interacting together, Silex fits me better",
+            "when developing alone.",
+            "",
+            "Anyway, composer make it easy to include components anywhere !",
+            "",
+            ""].join("\n"),
         contributions: ["foselasticabundle"]
     }, {
         id: "phpunit",
         title: "PhpUnit",
         url: "http://phpunit.de",
+        description: [
+            "Php's XUnit framework, it does it's job.",
+            "",
+            "I especialy like the `dataProvider` anotation, leveraging",
+            "test writing.",
+            "",
+            "Remember, hardest part of testing is to write testable code !",
+            "",
+            ""].join("\n"),
         related: ["phpunit", "propel", "doctrine", "elasticsearch", "casperjs", "php"],
         slides: [
             { title: "[FR] introduction to unit tests", url: "http://cup-of-giraf.github.io/presentation-unittests/#slide1" }
@@ -286,7 +312,8 @@ define({
         description: [
             "Command line addict, I use vim as primary editor and my system of choice is debian.",
             "",
-            "",
+            "You can find my puppet configuration on [github](https://github.com/themouette/puppet-me)",
+            "it helps me bootstrap vagrant's machines (one per project).",
             "",
             ""].join("\n"),
         related: ["bash", "debian", "vagrant"],
