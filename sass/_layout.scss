@@ -8,7 +8,7 @@ body {
     background: $background;
     padding: 2em 0;
 }
-body> header {
+body> header {@include grid-row;
     .contain-to-grid {
         background-color: transparent;
     }
