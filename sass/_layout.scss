@@ -18,7 +18,7 @@ body> section.main { @include grid-row;
     padding-top: 2em;
     .content {
         @include grid-column($columns:$total-columns,$collapse:false,$float:false);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
     }
     padding-bottom: emCalc(24px);
 }
@@ -68,7 +68,7 @@ body> footer { @include grid-row;
 
     header {
         @include grid-column(8,$float:right, $offset:0);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
     }
     h3 {
     }
@@ -83,7 +83,7 @@ body> footer { @include grid-row;
     }
     .logo {
         @include grid-column(2,$float:left, $offset:1);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
         padding-top: 0.5em;
         min-height: 150px;
         &> div {
@@ -104,11 +104,11 @@ body> footer { @include grid-row;
     }
     .mission {
         @include grid-column(8);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
     }
     div.skills {
         @include grid-column(8, $offset:3);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
     }
     ul.skills {
         font-size: emCalc(12px);
@@ -135,11 +135,11 @@ body> footer { @include grid-row;
 
     .experience-main {
         @include grid-column(7, $offset:1, $float:right);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
     }
     .sidebar {
         @include grid-column(2);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
         float: right;
     }
     .logo {
@@ -158,7 +158,7 @@ body> footer { @include grid-row;
     .related-presentations,
     .related-contributions {
         @include grid-column(4,$offset:1);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
 
         li {
             @include no-bullets;
@@ -170,7 +170,7 @@ body> footer { @include grid-row;
     @include grid-row($behavior:nested);
     header {
         @include grid-column(10, $offset:1);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
         margin-top: 2em;
     }
     .category::before{
@@ -188,13 +188,13 @@ body> footer { @include grid-row;
     }
     p.name {
         @include grid-column(2, $offset:1);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
         font-weight: bold;
         margin-bottom:0;
     }
     .skills {
         @include grid-column(8, $last-column:true);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
     }
     .skills ul {
         @include inline-list;
@@ -206,17 +206,17 @@ body> footer { @include grid-row;
     @include grid-row($behavior:nested);
     .contact {
         @include grid-column(3, $offset:0);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
         text-align: center;
     }
     .last-experiences {
         @include grid-column(6);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
         text-align: center;
     }
     .top-skills {
         @include grid-column(3, $last-column:true);
-        box-sizing: border-box;
+        @include box-sizing(border-box);
         text-align: right;
         text-align: center;
     }
