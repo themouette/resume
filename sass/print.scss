@@ -9,6 +9,171 @@
 @import "variables";
 @import "compass/typography/lists/bullets";
 
-body > header, body> footer { display:none; }
+$font-size: 8pt;
+@page { margin: 10% }
 
-@import "skills";
+body {
+    font-size: $font-size;
+}
+body > header .top-bar,
+body> footer {
+    display:none;
+}
+
+body> section.main,
+body> header {
+    @include grid-row;
+}
+
+body> header .print,
+body> section.main .disclaimer,
+body> section.main .presentation,
+body> section.main .experiences,
+body> section.main .skills-list,
+body> section.main h2{
+    @include grid-column($columns:$total-columns,$collapse:false,$float:false);
+    @include box-sizing(border-box);
+}
+
+body> header .print ul {
+    @include no-bullets;
+    padding: 0;
+    line-height: $font-size * 1.2;
+}
+
+body> header .print .contact {
+    float:right;
+}
+
+body> section.main {
+    .disclaimer {
+        h3 {
+            text-align: center;
+            margin: $font-size*2 auto;
+            font-size: $font-size*2;
+            line-height: $font-size*2.1;
+        }
+    }
+    h2 {
+        text-align: center;
+        margin-top: $font-size;
+        margin-bottom: $font-size;
+    }
+    .presentation {
+        text-align: justify;
+        line-height: $font-size*1.2;
+    }
+}
+
+.skills-list {
+    header {
+        margin-top: 2em;
+    }
+    .category::before{
+        content: " ";
+        margin: 0.5em auto;
+        width: 97%;
+        border-top: 1px dashed $line-color;
+    }
+    .category:nth-child(2)::before{
+        display: none;
+    }
+    .category {
+        @include grid-row($behavior:nested);
+        border-bottom:1px solid transparent;
+    }
+    p.name {
+        @include grid-column(3, $offset:0, $collapse:false);
+        @include box-sizing(border-box);
+        font-weight: bold;
+        margin-bottom:0;
+        margin-top:0;
+        line-height: emCalc(26px);
+    }
+    .skills {
+        @include grid-column(9, $last-column:true, $collapse:false);
+        @include box-sizing(border-box);
+    }
+    .skills ul {
+        @include inline-list;
+        margin-bottom: 0;
+        line-height: emCalc(26px);
+    }
+}
+
+.skills-list {
+    .group:nth-child(2) header {
+        margin-top: 0;
+    }
+}
+
+
+.experiences {
+    .experience::before{
+        margin:1em auto;
+        width: 40%;
+        border-top: 1pt solid $line-color;
+    }
+    .experience:nth-child(2)::before{
+        display: none;
+    }
+    .experience {
+        @include grid-row($behavior:nested);
+        margin: 16pt 0;
+        position: relative;
+    }
+
+    header {
+        @include grid-column(10,$float:right);
+        @include box-sizing(border-box);
+    }
+    h3 {
+    }
+    .time {
+        text-align:right;
+        display:block;
+        font-style: italic;
+        font-size: emCalc(12px);
+    }
+    .company {
+        font-weight: bold;
+    }
+    .logo {
+        @include grid-column(2,$float:left);
+        @include box-sizing(border-box);
+        padding-top: 10pt;
+        min-height: 70pt;
+        &> div {
+            width: 70pt;
+            float: left;
+            margin-right: 10pt;
+        }
+    }
+    .logo img {
+        max-height: 70pt;
+        max-width: 70pt;
+        margin: auto;
+        display:block;
+    }
+    .logo i {
+        font-size: 64pt;
+    }
+    .mission {
+        @include grid-column(10);
+        @include box-sizing(border-box);
+    }
+    div.skills {
+        @include grid-column(10, $offset:2);
+        @include box-sizing(border-box);
+    }
+    ul.skills {
+        font-size: $font-size*0.9;
+        @include inline-list;
+        li {
+            line-height: $font-size*1.2;
+        }
+    }
+    .no-skills {
+        font-style: italic;
+    }
+}

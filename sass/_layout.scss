@@ -3,6 +3,7 @@ body {
     padding: 2em 0;
 }
 body> header {@include grid-row;
+    & .print {display:none;}
     .contain-to-grid {
         background-color: transparent;
     }
@@ -15,6 +16,11 @@ body> section.main { @include grid-row;
         @include box-sizing(border-box);
     }
     padding-bottom: emCalc(24px);
+    h2 {
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
 }
 body> footer { @include grid-row;
     background: $foreground;
@@ -51,6 +57,10 @@ body> footer { @include grid-row;
         @include grid-column(3, $offset:0);
         @include box-sizing(border-box);
         text-align: center;
+        ul {
+            text-align: left;
+            padding-left:0.4em;
+        }
     }
     .last-experiences {
         @include grid-column(6);

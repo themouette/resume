@@ -61,8 +61,14 @@
         font-size: emCalc(12px);
         @include inline-list;
         li {
-            @include label;
+            line-height: emCalc(26px);
+        }
+        li > * {
+            $old-label-font-weight: $label-font-weight;
+            $label-font-weight: normal;
+            @include label();
             @include label-style($secondary-color, true);
+            $label-font-weight: $old-label-font-weight;
         }
     }
     .no-skills {
