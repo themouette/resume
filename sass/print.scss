@@ -1,0 +1,14 @@
+// Global Foundation Settings
+@import "settings";
+
+@import "foundation/foundation-global"; // *always required
+@import "foundation/components/global"; // *always required
+@import "foundation/components/grid";
+@import "foundation/components/inline-lists";
+
+@import "variables";
+@import "compass/typography/lists/bullets";
+
+body > header, body> footer { display:none; }
+
+@import "skills";
