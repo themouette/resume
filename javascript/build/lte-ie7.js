@@ -1,4 +1,4 @@
-/*! themouette-resume - v0.0.1 - 2013-04-24 */window.onload = function() {
+/*! themouette-resume - v0.0.1 - 2013-04-25 */window.onload = function() {
 	function addIcon(el, entity) {
 		var html = el.innerHTML;
 		el.innerHTML = '<span style="font-family: \'icomoon\'">' + entity + '</span>' + html;
@@ -13,7 +13,10 @@
 			'icon-github' : '&#xe006;',
 			'icon-twitter' : '&#xe007;',
 			'icon-printer' : '&#xe008;',
-			'icon-fork' : '&#xe009;'
+			'icon-mail' : '&#xe009;',
+			'icon-location' : '&#xe00a;',
+			'icon-cupcake' : '&#xf35b;',
+			'icon-fork' : '&#xe00b;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
