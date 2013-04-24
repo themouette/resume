@@ -5,6 +5,9 @@ define([
 ], function (tpl, _, Backbone) {
 
     var Header = Backbone.View.extend({
+        events: {
+            'click li.print': 'print'
+        },
 
         render: function () {
             this.$el.html(tpl(this.getViewData()));
@@ -17,6 +20,11 @@ define([
         navigate: function (selector) {
             this.$('.active').removeClass('active');
             this.$(selector).addClass('active');
+        },
+
+        print: function print(event) {
+            event.preventDefault();
+            Backbone.trigger('app:navigate', '!/print', {trigger: true});
         }
     });
 

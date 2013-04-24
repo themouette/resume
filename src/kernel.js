@@ -6,14 +6,16 @@ require([
     'app/experiences/router',
     'app/skills/router',
     'app/home/router',
+    'app/print/router',
     'app/helpers'
-], function ($, _, Backbone, Canvas, Experiences, Skills, Home) {
+], function ($, _, Backbone, Canvas, Experiences, Skills, Home, Print) {
     "use strict";
 
     // register module routes
     new Experiences();
     new Skills();
     new Home();
+    new Print();
     var router = new Backbone.Router({ });
     Backbone.on('app:navigate', _.bind(router.navigate, router));
 
