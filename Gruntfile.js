@@ -31,6 +31,13 @@ module.exports = function(grunt) {
         },
         // In dev phase load module asynchronously.
         // only concat require and config file.
+        print: {
+            src: [
+                'public/icomoo/style.css',
+                'public/css/print.css'
+            ],
+            dest: 'public/css/print.css'
+        },
         css: {
             src: [
                 'public/icomoo/style.css',
@@ -122,11 +129,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
-  grunt.registerTask('icomoo', ['concat:ie7', 'concat:css', 'copy:font']);
-  grunt.registerTask('dev', ['copy:pagedown', 'compass', 'concat:dev', 'icomoo']);
+  grunt.registerTask('icomoo', ['concat:ie7', 'concat:css', 'concat:print', 'copy:font']);
+  grunt.registerTask('dev', ['copy:pagedown', 'compass:dev', 'concat:dev', 'icomoo']);
   grunt.registerTask('release', [
     // copy and compile assets
-    'copy:pagedown', 'compass', 'icomoo',
+    'copy:pagedown', 'compass:dist', 'icomoo',
     'requirejs',            // build from config file
     'concat:release',       // combine static libs with build
     'uglify'
