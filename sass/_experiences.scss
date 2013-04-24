@@ -1,0 +1,97 @@
+.experiences {
+    .experience::before{
+        margin:1em auto;
+        width: 40%;
+        border-top: 1px solid $line-color;
+    }
+    .experience:nth-child(1)::before{
+        display: none;
+    }
+    .experience {
+        @include grid-row($behavior:nested);
+        margin: emCalc(16px) 0;
+        position: relative;
+    }
+
+    header {
+        @include grid-column(8,$float:right, $offset:0);
+        @include box-sizing(border-box);
+    }
+    h3 {
+    }
+    .time {
+        text-align:right;
+        display:block;
+        font-style: italic;
+        font-size: emCalc(12px);
+    }
+    .company {
+        font-weight: bold;
+    }
+    .logo {
+        @include grid-column(2,$float:left, $offset:1);
+        @include box-sizing(border-box);
+        padding-top: 0.5em;
+        min-height: 150px;
+        &> div {
+            @include thumb;
+            width: 130px;
+            float: left;
+            margin-right: 0.5em;
+        }
+    }
+    .logo img {
+        max-height: 130px;
+        max-width: 130px;
+        margin: auto;
+        display:block;
+    }
+    .logo i {
+        font-size: 64px;
+    }
+    .mission {
+        @include grid-column(8);
+        @include box-sizing(border-box);
+    }
+    div.skills {
+        @include grid-column(8, $offset:3);
+        @include box-sizing(border-box);
+    }
+    ul.skills {
+        font-size: emCalc(12px);
+        @include inline-list;
+        li {
+            @include label;
+            @include label-style($secondary-color, true);
+        }
+    }
+    .no-skills {
+        @include alert;
+    }
+}
+
+.experience.show {
+    @include grid-row($behavior:nested);
+    &::before {
+        content: " ";
+        @include grid-column(1);
+        float: right;
+        height: 200px;
+    }
+
+    .experience-main {
+        @include grid-column(7, $offset:1, $float:right);
+        @include box-sizing(border-box);
+    }
+    .sidebar {
+        @include grid-column(2);
+        @include box-sizing(border-box);
+        float: right;
+    }
+    .logo {
+        margin-bottom: 1.5em;
+    }
+    .description {
+        text-align: justify;
+    }
+}

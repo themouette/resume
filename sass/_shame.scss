@@ -1,0 +1,7 @@
+
+// I seem to miss a point in sass as I have to use quickfix
+// to have nice rendering in firefox.
+body> header .top-bar-section ul li > a:not(.button) {
+    width: auto;
+    line-height:44px;
+}

@@ -45,5 +45,10 @@
 // @import "foundation/components/dropdown";
 
 // application layout
+@import "variables";
+@import "compass/typography/lists/bullets";
+
 @import "layout";
+@import "experiences";
+@import "skills";
 @import "shame";
