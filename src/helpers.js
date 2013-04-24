@@ -9,7 +9,8 @@ define([
     "use strict";
 
     var skills = new Backbone.Collection(data.skills);
-    var linkTpl = _.template('<a href="#!/skills/<%- id %>"><%- title %></a>');
+    var linkTpl = _.template('<span><a href="#!/skills/<%- id %>"><%- title %></a></span>');
+    var spanTpl = _.template('<span><%- title %></span>');
     Handlebars.registerHelper('skill', function (skill) {
         var s = skills.get(skill) || _.first(skills.where({id:skill}));
         if (s) {
@@ -18,7 +19,9 @@ define([
             );
         }
 
-        return skill;
+        return new Handlebars.SafeString(
+            spanTpl({title: skill})
+        );
     });
 
 
