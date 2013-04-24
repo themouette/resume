@@ -13,7 +13,9 @@ window.onload = function() {
 			'icon-office' : '&#xe004;',
 			'icon-article' : '&#xe005;',
 			'icon-github' : '&#xe006;',
-			'icon-twitter' : '&#xe007;'
+			'icon-twitter' : '&#xe007;',
+			'icon-printer' : '&#xe008;',
+			'icon-fork' : '&#xe009;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
