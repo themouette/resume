@@ -15,7 +15,10 @@ window.onload = function() {
 			'icon-github' : '&#xe006;',
 			'icon-twitter' : '&#xe007;',
 			'icon-printer' : '&#xe008;',
-			'icon-fork' : '&#xe009;'
+			'icon-mail' : '&#xe009;',
+			'icon-location' : '&#xe00a;',
+			'icon-cupcake' : '&#xf35b;',
+			'icon-fork' : '&#xe00b;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
