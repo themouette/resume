@@ -6,8 +6,15 @@ define({
         from: "2013-04-02",
         until: null,
         logo: "almerys.jpg",
-        mission: "Develop a shared events and calendars system",
-        skills: ["javascript", "backbone"]
+        mission: [
+            "Participate to architecture of a data centric home portal.",
+            "",
+            "Lead the team that develop a shared events and calendars system in it.",
+            "",
+            "Training 2 juniors to start a frontend team.",
+            "",
+            ""].join("\n"),
+        skills: ["javascript", "backbone", "REST/HTTP"]
     }, {
         id: "clermontech",
         title: "vice president",
@@ -51,7 +58,11 @@ define({
         until: "2013-03-31",
         mission: "Develop a car retailer intranet",
         logo: "itnetwork.png",
-        description: "TODO",
+        description: [
+            "",
+            "",
+            "",
+            ""].join("\n"),
         skills: ["php", "symfony2", "doctrine", "phpunit", "mysql", "elasticsearch", "javascript", "backbone", "requirejs", "casperjs", "git", "linux"]
     }, {
         id: "carpe-hora",
@@ -62,7 +73,28 @@ define({
         mission: "Develop an on line booking system.",
         logo: "carpe-hora.png",
         description: [
+            "It was a long journey with countless twists and turns.",
             "",
+            "I started right after my internship, as the only developer,",
+            "exploring web technology while creating what became the first",
+            "prototype of t-resa, our product.",
+            "",
+            "Cash was short, so I contracted for a year and a half in web related research services.",
+            "You can find more information in [dedicated](#!/experiences/efixo) [pages](#!/experiences/orange-r-d)",
+            "",
+            "It took 2 years to have a working prototype that allowed raising money.",
+            "",
+            "I hired 1, then 2 and finaly 3 trainees to teach them all I know for a few months.",
+            "Trainees turned into employees and a new sales department was created.",
+            "Prototype became product, while sales were having hard times.",
+            "",
+            "Back at contracting to pay bills as sales where giving us hard time, we tried",
+            "more and more ways.",
+            "",
+            "In the end we didn't make it to the market, being unable to find the right angle, but it was an experience !",
+            "All employees and myself had great opportunities, so it was time to move on.",
+            "",
+            "If you ask me, first thing to do before building a product, is to make sure you know how to sell it !",
             ""].join("\n"),
         skills: ["php", "symfony1", "propel", "postgresql", "javascript", "jquery", "backbone", "git", "puppet", "linux"]
     }, {
