@@ -1,4 +1,160 @@
-/*! themouette-resume - v0.0.1 - 2013-04-25 */@font-face {
+/*! themouette-resume - v0.0.1 - 2013-04-27 */@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-calendar, .icon-star, .icon-star-2, .icon-star-3, .icon-office, .icon-article, .icon-github, .icon-twitter, .icon-printer, .icon-mail, .icon-location, .icon-cupcake, .icon-fork {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-calendar:before {
+	content: "\e001";
+}
+.icon-star:before {
+	content: "\e000";
+}
+.icon-star-2:before {
+	content: "\e002";
+}
+.icon-star-3:before {
+	content: "\e003";
+}
+.icon-office:before {
+	content: "\e004";
+}
+.icon-article:before {
+	content: "\e005";
+}
+.icon-github:before {
+	content: "\e006";
+}
+.icon-twitter:before {
+	content: "\e007";
+}
+.icon-printer:before {
+	content: "\e008";
+}
+.icon-mail:before {
+	content: "\e009";
+}
+.icon-location:before {
+	content: "\e00a";
+}
+.icon-cupcake:before {
+	content: "\f35b";
+}
+.icon-fork:before {
+	content: "\e00b";
+}
+;/*! themouette-resume - v0.0.1 - 2013-04-27 */@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-calendar, .icon-star, .icon-star-2, .icon-star-3, .icon-office, .icon-article, .icon-github, .icon-twitter, .icon-printer, .icon-mail, .icon-location, .icon-cupcake, .icon-fork {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-calendar:before {
+	content: "\e001";
+}
+.icon-star:before {
+	content: "\e000";
+}
+.icon-star-2:before {
+	content: "\e002";
+}
+.icon-star-3:before {
+	content: "\e003";
+}
+.icon-office:before {
+	content: "\e004";
+}
+.icon-article:before {
+	content: "\e005";
+}
+.icon-github:before {
+	content: "\e006";
+}
+.icon-twitter:before {
+	content: "\e007";
+}
+.icon-printer:before {
+	content: "\e008";
+}
+.icon-mail:before {
+	content: "\e009";
+}
+.icon-location:before {
+	content: "\e00a";
+}
+.icon-cupcake:before {
+	content: "\f35b";
+}
+.icon-fork:before {
+	content: "\e00b";
+}
+;/*! themouette-resume - v0.0.1 - 2013-04-25 */@font-face {
 	font-family: 'icomoon';
 	src:url('fonts/icomoon.eot');
 	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),

@@ -1,4 +1,4 @@
-/*! themouette-resume - v0.0.1 - 2013-04-25 */window.onload = function() {
+/*! themouette-resume - v0.0.1 - 2013-04-27 */window.onload = function() {
 	function addIcon(el, entity) {
 		var html = el.innerHTML;
 		el.innerHTML = '<span style="font-family: \'icomoon\'">' + entity + '</span>' + html;
