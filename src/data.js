@@ -59,11 +59,20 @@ define({
         mission: "Develop a car retailer intranet",
         logo: "itnetwork.png",
         description: [
+            "Particiated in best practice introduction for development team as well as ",
+            "PHP/Javascript developer.",
             "",
+            "During my mission, team started to Unit Test PHP code, implemented ",
+            "[CasperJS](http://casperjs.org), do peer reviews...",
+            "",
+            "I also introduced [elasticsearch](http://www.elasticsearch.org/ and ",
+            "BackboneJS, and frontend unit tests using Qunit.",
             "",
             "",
             ""].join("\n"),
-        skills: ["php", "symfony2", "doctrine", "phpunit", "mysql", "elasticsearch", "javascript", "backbone", "requirejs", "casperjs", "git", "linux"]
+        skills: ["php", "symfony2", "doctrine", "phpunit", "mysql",
+            "elasticsearch", "javascript", "backbone", "requirejs", "casperjs",
+            "git", "linux"]
     }, {
         id: "carpe-hora",
         title: "head and co-founder",
