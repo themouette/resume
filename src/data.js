@@ -27,7 +27,7 @@ define({
             "",
             "To achieve this goal, we organize conferences called \"API Hours\" and developer lunches.",
             "",
-            "For the \"API Hours\" first edition I gave a lightning talk: [AJAX from scratch](http://clermontech.org/api-hours/2013/03/25/API-Hour-1.html).",
+            "For the \"API Hours\" first edition I gave a lightning talk: [AJAX from scratch](http://clermontech.org/talks/api-hour-1/2-julien-muetton-ajax-from-scratch.html).",
             "",
             "Slides are available [on github](http://themouette.github.io/presentation-apihours-ajax-from-scratch/).",
             ""].join("\n"),
