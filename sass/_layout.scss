@@ -3,10 +3,11 @@ body {
     padding: 2em 0;
 }
 body> header {@include grid-row;
-    & .print {display:none;}
     .contain-to-grid {
         background-color: transparent;
     }
+
+    background-color: $foreground;
 }
 body> section.main { @include grid-row;
     background: $foreground;
@@ -49,6 +50,7 @@ body> footer { @include grid-row;
     margin-top: 4em;
     @include grid-column(10,$center:true);
     margin-bottom: 6em;
+    text-align: justify;
 }
 
 .home {

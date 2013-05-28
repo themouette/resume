@@ -1,21 +1,20 @@
 // Global Foundation Settings
 @import "settings";
+@import "variables";
+@import "normalize";
 
-@import "foundation/foundation-global"; // *always required
+@import "compass/typography/lists/bullets";
+
 @import "foundation/components/global"; // *always required
 @import "foundation/components/grid";
 @import "foundation/components/inline-lists";
-
-@import "variables";
-@import "compass/typography/lists/bullets";
 
 $font-size: 8pt;
 
 body {
     font-size: $font-size;
 }
-body > header .top-bar,
-body> footer {
+.hide-on-print {
     display:none;
 }
 
@@ -34,14 +33,19 @@ body> section.main h2{
     @include box-sizing(border-box);
 }
 
-body> header .print ul {
+body> header .print-only ul {
     @include no-bullets;
     padding: 0;
     line-height: $font-size * 1.2;
 }
 
-body> header .print .contact {
+body> header .print-only .contact {
     float:right;
+}
+
+body> footer p {
+    margin-top:180pt;
+    text-align: center;
 }
 
 body> section.main {
@@ -55,12 +59,13 @@ body> section.main {
     }
     h2 {
         text-align: center;
-        margin-top: $font-size;
-        margin-bottom: $font-size;
+        margin: $font-size*2;
+        margin-bottom: $font-size*2;
     }
     .presentation {
         text-align: justify;
-        line-height: $font-size*1.2;
+        line-height: $font-size*1.4;
+        margin: 10pt 0;
     }
 }
 
@@ -98,9 +103,7 @@ body> section.main {
         margin-bottom: 0;
         line-height: emCalc(26px);
     }
-}
 
-.skills-list {
     .group:nth-child(2) header {
         margin-top: 0;
     }
@@ -120,6 +123,13 @@ body> section.main {
         @include grid-row($behavior:nested);
         margin: 16pt 0;
         position: relative;
+    }
+    // ensure page break before ORANGE
+    .experience:nth-child(7) {
+        margin-top: 50pt;
+    }
+    .experience:nth-child(7)::before{
+        display: none;
     }
 
     header {
@@ -176,3 +186,4 @@ body> section.main {
         font-style: italic;
     }
 }
+
