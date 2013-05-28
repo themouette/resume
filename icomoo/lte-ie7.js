@@ -10,15 +10,16 @@ window.onload = function() {
 			'icon-star' : '&#xe000;',
 			'icon-star-2' : '&#xe002;',
 			'icon-star-3' : '&#xe003;',
-			'icon-office' : '&#xe004;',
 			'icon-article' : '&#xe005;',
+			'icon-office' : '&#xe004;',
 			'icon-github' : '&#xe006;',
 			'icon-twitter' : '&#xe007;',
 			'icon-printer' : '&#xe008;',
 			'icon-mail' : '&#xe009;',
 			'icon-location' : '&#xe00a;',
 			'icon-cupcake' : '&#xf35b;',
-			'icon-fork' : '&#xe00b;'
+			'icon-fork' : '&#xe00b;',
+			'icon-link' : '&#xe00c;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;

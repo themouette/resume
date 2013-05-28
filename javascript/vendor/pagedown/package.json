@@ -16,13 +16,15 @@
     "node-pagedown.js"
   ],
   "main": "node-pagedown.js",
-  "bugs": "http://code.google.com/p/pagedown/issues/list",
-  "homepage": "http://code.google.com/p/pagedown/wiki/PageDown",
-  "_id": "pagedown@1.1.0",
-  "readme": "ERROR: No README.md file found!",
-  "dist": {
-    "shasum": "c2674229f481ad37210134d4a87878fd81e7ecc1"
+  "bugs": {
+    "url": "http://code.google.com/p/pagedown/issues/list"
   },
-  "_from": "pagedown@",
+  "homepage": "http://code.google.com/p/pagedown/wiki/PageDown",
+  "readme": "ERROR: No README data found!",
+  "_id": "pagedown@1.1.0",
+  "dist": {
+    "shasum": "7fb10cb7da397bd0c139e7c057a91f98ba2d116a"
+  },
+  "_from": "pagedown@~1.1.0",
   "_resolved": "https://registry.npmjs.org/pagedown/-/pagedown-1.1.0.tgz"
 }
