@@ -1,0 +1,26 @@
+name: "build"
+run-name: Build ${{ github.actor }} - ${{ github.run_number }}
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "2.7"
+      - name: Install dependencies
+        run: |
+          gem install compass 1.0.3
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "0.10"
+      - name: Install dependencies
+        run: |
+          npm install
+          nom i grunt-cli@0.1
+      - name: Build
+        run: |
+          grunt release

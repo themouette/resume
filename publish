@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This repository uses gh-pages as a submodule.
+# https://github.com/shiftyp/submodule-gh-pages-example
+
+GH_PAGES_DIR="public"
+GH_PAGES_BRANCH="gh-pages"
+ORIG_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+
+cd "${GH_PAGES_DIR}" && \
+    git reset --hard . && \
+    cd .. && \
+	grunt release && \
+	cd "${GH_PAGES_DIR}" && \
+    git add . && \
+    git commit -m "Release `date +'%F-%T'`" && \
+    git push -f	origin "${GH_PAGES_BRANCH}" && \
+	cd .. && \
+    git add "${GH_PAGES_DIR}" && \
+    git tag "release-`date +'%F-%T'`" && \
+    git push origin "${ORIG_BRANCH}" --tags
+
